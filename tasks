@@ -1,0 +1,38 @@
+Задача 1
+const inputArray1 = [9, 5, 10, 2, 24, -1, -48];
+const inputArray2 = [3, 6, -2, -5, 7, 3];
+const inputArray3 = [-1, -2];
+const inputArray4 = [5, 1, 2, 3, 1, 4];
+const inputArray5 = [1, 2, 3, 0];
+
+const adjacentElementsProduct = array => {
+    let max = -Infinity;
+    for (let i = 1; i < array.length; i++) {
+        max = Math.max(array[i] * array[i-1], max);
+    }
+
+    return max;
+}
+console.log(adjacentElementsProduct(inputArray1));
+console.log(adjacentElementsProduct(inputArray2));
+console.log(adjacentElementsProduct(inputArray3));
+console.log(adjacentElementsProduct(inputArray4));
+console.log(adjacentElementsProduct(inputArray5));
+
+
+
+Задача 2
+
+const string = 'Hello World!';
+const string2 = 'Kyiv is the capital of Ukraine!';
+
+const findUniqueElements = str => {
+	const array = str.split('');
+	const uniqueElements = array.reduce((acc, n) => (acc.includes(n) || acc.push(n), acc), []);
+	const countUniqueElements = uniqueElements.length;
+  
+	return [uniqueElements, countUniqueElements];
+};
+
+console.log(findUniqueElements(string));
+console.log(findUniqueElements(string2));
